@@ -140,6 +140,8 @@ classdef NIDS_initTest
                 err(i + 2)  = norm(x_cur-x_star,'fro');
                 eng(i + 2)  = this.E(x_cur); 
                 
+                %do not use; we do not know optimal soln
+                %{
                 if err(i + 2) < tol
                     x_array = x_array(1:i);
                     d_array = d_array(1:i);                    
@@ -148,6 +150,7 @@ classdef NIDS_initTest
                     convergeTol = 1;
                     break
                 end
+                %}
             end;
             out.err 	= err;
             out.eng 	= eng;
